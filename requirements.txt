@@ -1,0 +1,7 @@
+pandas
+requests
+time
+datetime
+python-dotenv
+os
+sqlite3-binary
