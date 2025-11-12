@@ -1,56 +1,57 @@
- 💼 Portfolio – Sijodel Gueret  
-### 🧠 Data Engineer | Analytics Engineer | Cloud & BI Specialist  
+# ⚽ FootballAnalytics_Python
 
-> Passionné par la **data engineering**, j’aide à transformer les données brutes en informations utiles à la décision.  
-> Mon approche : combiner **ingénierie, analytics et business** pour créer des solutions data modernes, scalables et pertinentes.  
+> 🚀 **Projet Data Engineering complet** : pipeline **ETL en Python** pour extraire, transformer et charger les données de matchs de football depuis l’API _Football-Data.org_ vers une base **SQLite**, avec gestion des logs et traçabilité.
 
 ---
 
-## 🚀 À propos de moi
+## 🏷️ Badges techniques
 
-🎯 **Profil :**  
-Data Engineer spécialisé en pipelines cloud (Azure, Snowflake) et en intégration analytique.  
-Je conçois des solutions de bout en bout — de la collecte API jusqu’à la visualisation BI.
-
-🧩 **Ce que je fais :**
-- Construction de pipelines ETL / ELT (Python, ADF, dbt)
-- Modélisation de données (modèle en étoile, historisation, KPI)
-- Intégration Data Warehouse (**Snowflake**, **BigQuery**, **Azure SQL**)
-- Automatisation et monitoring (**ADF**, **Airflow**, **Key Vault**, **logs techniques**)
-- Visualisation et storytelling (**Power BI**, **Tableau**)
-
-💬 **Langues :**
-- 🇫🇷 Français (natif)
-- 🇬🇧 Anglais (professionnel)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-DataFrame-yellow?logo=pandas)
+![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey?logo=sqlite)
+![ETL](https://img.shields.io/badge/Process-ETL-orange)
+![ADF](https://img.shields.io/badge/Azure-Data%20Factory-blue?logo=microsoftazure)
+![Snowflake](https://img.shields.io/badge/Warehouse-Snowflake-00BFFF?logo=snowflake)
+![Power BI](https://img.shields.io/badge/Dashboard-Power%20BI-F2C811?logo=powerbi)
 
 ---
 
-## 🧠 Stack technique principale
+## 🧠 Objectif
 
-| Domaine | Outils & technologies |
-|----------|----------------------|
-| 🧮 **Ingestion & Transformation** | Python, Pandas, SQL, API REST |
-| ☁️ **Data Orchestration** | Azure Data Factory, Airflow |
-| 🧊 **Data Warehouse** | Snowflake, SQLite, Oracle |
-| 🧰 **Data Modeling** | Star Schema, Slowly Changing Dimensions, KPI Design |
-| 📊 **Visualisation** | Power BI, Tableau |
-| 🧾 **DevOps & Tools** | GitHub, VSCode, Azure DevOps, Key Vault |
+Automatiser le suivi et la transformation des données de matchs :
+1. **Extraction** depuis l’API `football-data.org`
+2. **Transformation** des données brutes en DataFrames propres
+3. **Chargement** dans une base **SQLite**
+4. **Journalisation complète** via `logger_config.py`
 
----
-
-## ⚙️ Mes projets principaux
-
-| Projet | Description | Stack |
-|--------|--------------|--------|
-| ⚽ [**Football Analytics – Python ETL**](./projet-football-analytics) | Extraction API, transformation, chargement SQLite et logs – base du pipeline ADF + Snowflake | Python, Pandas, SQLite |
-| ☁️ **Football Analytics – Cloud** *(à venir)* | Migration du projet Python vers ADF + Snowflake + Power BI | Azure Data Factory, Snowflake |
-| 💰 **Finance – FMP API** *(à venir)* | Analyse de ratios financiers (PER, EBITDA, croissance) à partir de l’API Financial Modeling Prep | Python, Power BI |
-| 🧬 **Santé / Biotech Pipeline** *(en développement)* | Intégration open data santé, calcul d’indicateurs de suivi d’essais cliniques | Python, Streamlit, Snowflake |
-| 🛒 **Retail ETL / ROI Analytics** *(à venir)* | Analyse des ventes & retours multi-magasins – modèle en étoile | dbt, Snowflake, Power BI |
+Ce pipeline constitue la **brique Python locale** du projet global *Football Analytics Data Platform* (ADF → Snowflake → Power BI).
 
 ---
 
-## 📈 Exemple : Football Analytics – Python ETL
+## 🧩 Stack technique
 
-> Pipeline complet en Python pour extraire les matchs depuis l’API _Football-Data.org_, transformer les données et les charger dans une base **SQLite** avec logs et traçabilité.
+| Outil / Lib | Usage principal |
+|--------------|----------------|
+| 🐍 **Python** | Développement du pipeline ETL |
+| 🌐 **Requests** | Appels API REST |
+| 🧮 **Pandas** | Transformation de données |
+| 🗄️ **SQLite3** | Stockage local |
+| 🧾 **Logging / dotenv** | Logs & variables d’environnement |
+| 📊 **OpenPyXL** | Export Excel |
+
+---
+
+## 🗂️ Structure du projet
+## 🧠 Architecture du pipeline Python
+
+```mermaid
+flowchart LR
+    A[⚽ API Football Data] -->|JSON| B[📥 EXTRACT<br>src/extract/extract_api.py]
+    B --> C[🧮 TRANSFORM<br>src/transform/transform.py]
+    C --> D[💾 LOAD<br>src/load/database.py]
+    D --> E[(🗄️ SQLite<br>data/historique_match.db)]
+    C --> F[📊 Processed Files<br>data/processed/]
+    A --> G[📁 Raw JSON<br>data/raw/]
+    B --> H[🧾 Logs<br>data/logs/etl_*.log]
+    D --> H
 
