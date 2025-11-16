@@ -144,4 +144,7 @@ erDiagram
 
 ### ☁️ Architecture d’accès
 Snowflake → Python Connector → Streamlit Cloud / Local
+### ☁️ Page Streamlit
+<img width="914" height="354" alt="image" src="https://github.com/user-attachments/assets/c5ab25e6-49bb-45ac-b6e0-bf33fd5ab908" />
+
 
