@@ -1,7 +1,8 @@
 title: "Sijodel Gueret – Portfolio Data Engineer"
 description: "Data Engineer spécialisé en pipelines cloud, Azure, Snowflake et Power BI."
 theme: jekyll-theme-cayman
-
+logo: img/Capture d'écran 2025-11-16 235336.png
+description: "Page Streamlit"
 
 show_downloads: false
 google_analytics: false
